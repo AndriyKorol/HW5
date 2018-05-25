@@ -85,6 +85,7 @@ sortArrays.sort(function (prev1, next1) {
 console.log(sortArrays);
 
 //3.4
+console.log(3.4);
 let arrayObjs = [
     {cpu: 'intel', info: {core: 2, cache: 3}},
     {cpu: 'intel', info: {core: 4, cache: 4}},
@@ -93,13 +94,27 @@ let arrayObjs = [
     {cpu: 'amd', info: {core: 4, cache: 2}}
 ]
 
+
 //3.5
-const products = [
+let a, b;
+let products = [
     {title: 'prod1', price: 5.2}, {title: 'prod2', price: 0.18},
     {title: 'prod3', price: 15}, {title: 'prod4', price: 25},
     {title: 'prod5', price: 18.9}, {title: 'prod6', price: 8},
     {title: 'prod7', price: 19}, {title: 'prod8', price: 63}
-]
+];
 
-//4.
-console.log("4.");
+function filterRangeInPlace(arr, a, b) {
+	const sortedArr = arr.sort((prev6, next6) =>(
+        prev6.price - next6.price ));
+	
+let filterRes = sortedArr.filter(prod => { 
+    if (prod.price > a){
+	    if (prod.price < b){
+	        return console.log(prod);}
+	}
+})};
+console.log(filterRangeInPlace(products, 10, 20));
+
+ 
+
