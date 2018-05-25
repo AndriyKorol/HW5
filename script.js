@@ -120,22 +120,21 @@ console.log(filterRangeOfPrice(products, 10, 20));
 //4.1
 
 //4.2a
-let sentances = [
+let sentences = [
     {char: 'a', index: 12}, {char: 'w', index: 8}, {char: 'Y', index: 10},
-	{char: 'p', index: 13}, {char: 'p', index: 2}, {char: 'N', index: 6},
-	{char: ' ', index: 5}, {char: 'y', index: 4}, {char: 'r', index: 13},
-	{char: 'H', index: 0}, {char: 'e', index: 11}, {char: 'a', index: 1},
-	{char: ' ', index: 9}, {char: '!', index: 14}, {char: 'e', index: 7},
+    {char: 'p', index: 13}, {char: 'p', index: 2}, {char: 'N', index: 6},
+    {char: ' ', index: 5}, {char: 'y', index: 4}, {char: 'r', index: 13},
+    {char: 'H', index: 0}, {char: 'e', index: 11}, {char: 'a', index: 1},
+    {char: ' ', index: 9}, {char: '!', index: 14}, {char: 'e', index: 7},
 ];
 
-function createSentances(arr) {
-	const sortArr = arr.sort((prev, next) =>(
-        	prev.index - next.index ));
-	let sentances = sortArr.reduce(function(prev, curr){		
-		return prev.char + curr.char;
-	})
-	console.log(sentances);
-};
-console.log(createSentances(sentances));
+function createSentences(arr) {
+    const sortArr = arr.sort((prev, next) =>(
+        prev.index - next.index ));
+    let sentences = sortArr.reduce((prev, curr) => prev + curr.char, 0);
+
+    console.log(sentences);
+}
+console.log(createSentences(sentences));
 
 //4.2b
