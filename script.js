@@ -85,7 +85,6 @@ sortArrays.sort(function (prev1, next1) {
 console.log(sortArrays);
 
 //3.4
-console.log(3.4);
 let arrayObjs = [
     {cpu: 'intel', info: {core: 2, cache: 3}},
     {cpu: 'intel', info: {core: 4, cache: 4}},
@@ -93,6 +92,12 @@ let arrayObjs = [
     {cpu: 'intel', info: {core: 3, cache: 2}},
     {cpu: 'amd', info: {core: 4, cache: 2}}
 ]
+function filterRangeOfCore(arr) {
+	const sortedArr = arr.sort((prev, next) =>(		
+		prev.info - next.info )
+	)
+};
+console.log(filterRangeOfCore(arrayObjs));
 
 
 //3.5
@@ -104,9 +109,9 @@ let products = [
     {title: 'prod7', price: 19}, {title: 'prod8', price: 63}
 ];
 
-function filterRangeInPlace(arr, a, b) {
-	const sortedArr = arr.sort((prev6, next6) =>(
-        prev6.price - next6.price ));
+function filterRangeOfPrice(arr, a, b) {
+	const sortedArr = arr.sort((prev, next) =>(
+        prev.price - next.price ));
 	
 let filterRes = sortedArr.filter(prod => { 
     if (prod.price > a){
@@ -114,7 +119,38 @@ let filterRes = sortedArr.filter(prod => {
 	        return console.log(prod);}
 	}
 })};
-console.log(filterRangeInPlace(products, 10, 20));
+console.log(filterRangeOfPrice(products, 10, 20));
 
  
+//4.1
 
+//let numbArr = [1, 2, 3, 5, 8, 9, 10];
+
+//let mapResult = numbArr.map(numb => {
+//	f(numb > 0){
+//		digit = numb;
+//	}
+//	return numb;
+    
+//});
+
+//4.2a
+let sentances = [
+    {char: 'a', index: 12}, {char: 'w', index: 8}, {char: 'Y', index: 10},
+	{char: 'p', index: 13}, {char: 'p', index: 2}, {char: 'N', index: 6},
+	{char: ' ', index: 5}, {char: 'y', index: 4}, {char: 'r', index: 13},
+	{char: 'H', index: 0}, {char: 'e', index: 11}, {char: 'a', index: 1},
+	{char: ' ', index: 9}, {char: '!', index: 14}, {char: 'e', index: 7},
+];
+
+function createSentances(arr) {
+	const sortArr = arr.sort((prev, next) =>(
+        prev.index - next.index ));
+	let sentances = sortArr.reduce(function(prev, curr){		
+		return prev.char + curr.char;
+	})
+	console.log(sentances);
+};
+console.log(createSentances(sentances));
+
+//4.2b
