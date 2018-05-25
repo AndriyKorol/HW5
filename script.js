@@ -145,7 +145,7 @@ let sentances = [
 
 function createSentances(arr) {
 	const sortArr = arr.sort((prev, next) =>(
-        prev.index - next.index ));
+        	prev.index - next.index ));
 	let sentances = sortArr.reduce(function(prev, curr){		
 		return prev.char + curr.char;
 	})
