@@ -116,19 +116,8 @@ let filterRes = sortedArr.filter(prod => {
 	}
 })};
 console.log(filterRangeOfPrice(products, 10, 20));
-
  
 //4.1
-
-//let numbArr = [1, 2, 3, 5, 8, 9, 10];
-
-//let mapResult = numbArr.map(numb => {
-//	f(numb > 0){
-//		digit = numb;
-//	}
-//	return numb;
-    
-//});
 
 //4.2a
 let sentances = [
