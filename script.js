@@ -92,13 +92,9 @@ let arrayObjs = [
     {cpu: 'intel', info: {core: 3, cache: 2}},
     {cpu: 'amd', info: {core: 4, cache: 2}}
 ]
-function filterRangeOfCore(arr) {
-	const sortedArr = arr.sort((prev, next) =>(		
-		prev.info - next.info )
-	)
-};
-console.log(filterRangeOfCore(arrayObjs));
-
+const sortedArr = arrayObjs.sort((prev, next) =>(
+    prev.info.core - next.info.core ));
+console.log(sortedArr);
 
 //3.5
 let a, b;
