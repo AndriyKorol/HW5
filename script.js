@@ -118,6 +118,11 @@ let filterRes = sortedArr.filter(prod => {
 console.log(filterRangeOfPrice(products, 10, 20));
  
 //4.1
+let arrNum = [1, 2, 3, 5, 8, 9, 10];
+
+let arrayOfObjs = arrNum.map((item) =>
+    item%2 ? {digit: item, odd: false} : {digit: item, odd : true} );
+console.log(arrayOfObjs);
 
 //4.2a
 let sentences = [
@@ -131,10 +136,18 @@ let sentences = [
 function createSentences(arr) {
     const sortArr = arr.sort((prev, next) =>(
         prev.index - next.index ));
-    let sentences = sortArr.reduce((prev, curr) => prev + curr.char, 0);
-
+    let sentences = sortArr.reduce((prev, curr) => prev + curr.char, '');
     console.log(sentences);
 }
 console.log(createSentences(sentences));
 
 //4.2b
+function createSentences2(arr){
+    let newArr =[];
+
+    for(i of arr) {
+        newArr[i.index] = i.char;
+    }
+    return newArr.join('');
+}
+console.log(createSentences2(sentences));
