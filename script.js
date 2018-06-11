@@ -92,8 +92,7 @@ let arrayObjs = [
     {cpu: 'intel', info: {core: 3, cache: 2}},
     {cpu: 'amd', info: {core: 4, cache: 2}}
 ]
-const sortedArr = arrayObjs.sort((prev, next) =>(
-    prev.info.core - next.info.core ));
+const sortedArr = arrayObjs.sort((prev, next) =>prev.info.core - next.info.core );
 console.log(sortedArr);
 
 //3.5
@@ -106,22 +105,21 @@ let products = [
 ];
 
 function filterRangeOfPrice(arr, a, b) {
-	const sortedArr = arr.sort((prev, next) =>(
-        prev.price - next.price ));
-	
-let filterRes = sortedArr.filter(prod => { 
-    if (prod.price > a){
-	    if (prod.price < b){
-	        return console.log(prod);}
-	}
-})};
+    return arr.sort((prev, next) => prev.price - next.price )
+        .filter(prod => {
+            if (prod.price > a){
+                if (prod.price < b){
+                    return console.log(prod);
+                }
+            }
+        });
+};
 console.log(filterRangeOfPrice(products, 10, 20));
  
 //4.1
 let arrNum = [1, 2, 3, 5, 8, 9, 10];
 
-let arrayOfObjs = arrNum.map((item) =>
-    item%2 ? {digit: item, odd: false} : {digit: item, odd : true} );
+let arrayOfObjs = arrNum.map((item, i) => ({ digit: item, odd: Boolean(item % 2)}));
 console.log(arrayOfObjs);
 
 //4.2a
@@ -134,10 +132,8 @@ let sentences = [
 ];
 
 function createSentences(arr) {
-    const sortArr = arr.sort((prev, next) =>(
-        prev.index - next.index ));
-    let sentences = sortArr.reduce((prev, curr) => prev + curr.char, '');
-    console.log(sentences);
+    return arr.sort((prev, next) => prev.index - next.index )
+            .reduce((prev, curr) => prev + curr.char, '');
 }
 console.log(createSentences(sentences));
 
