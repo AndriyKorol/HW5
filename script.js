@@ -60,7 +60,7 @@ console.log('some: ' + someCar);
 //3.1
 let sortReverse = [2, 4, 7, 1, -2, 10, -9];
 sortReverse.sort(function (prev, next) {
-    return prev - next;
+    return next - prev;
 });
 console.log(sortReverse);
 
