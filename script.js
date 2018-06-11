@@ -51,11 +51,28 @@ let cars = [
     }
 ];
 
-let everyCar = cars.every(car => car.year > 2014);
-console.log('every: ' + everyCar);
+let prov = (item, el, arr) => car.year > 2014;
+function some(arr, func) {
+    for (let i=0; i < arr.length; i++) {
+        if (func(arr[i], i, arr)) return 'true';
+    }
+    return 'false';
+}
 
-let someCar = cars.some(car => car.year > 2016);
-console.log('some: ' + someCar);
+let someCar = some(cars, (item, el, arr) => item.year > 2014);
+
+console.log('some - ' + someCar);
+
+function every(arr, func) {
+    for (let i=0; i < arr.length; i++) {
+        if (!func(arr[i], i, arr)) return 'false';
+    }
+    return 'true';
+}
+
+let everyCar = every(cars, (item, el, arr) => item.year > 2016);
+
+console.log('every - ' + everyCar);
 
 //3.1
 let sortReverse = [2, 4, 7, 1, -2, 10, -9];
